@@ -40,6 +40,11 @@ void UHealthComponent::DamageTaken(AActor* DamagedActor, float Damage, const UDa
 	if (Damage <= 0.f) return;
 	Health -= Damage;
 
+	UE_LOG(LogTemp, Warning, TEXT("DamagedActor: %s"), *DamagedActor->GetDefaultActorLabel());
+	UE_LOG(LogTemp, Warning, TEXT("DamagedCauser: %s"), *DamagedActor->GetDefaultActorLabel());
+	UE_LOG(LogTemp, Warning, TEXT("Health: %f"), Health);
+	UE_LOG(LogTemp, Warning, TEXT("Damage: %f"), Damage);
+
 	if (Health <= 0.f && ToonTankGameMode)
 	{
 		ToonTankGameMode->ActorDie(DamagedActor);

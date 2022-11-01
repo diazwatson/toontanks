@@ -55,7 +55,6 @@ void ATank::Tick(float DeltaTime)
 
 void ATank::HandleDestruction()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Tank is being damaged"));
 	Super::HandleDestruction();
 	SetActorHiddenInGame(true);
 	SetActorTickEnabled(false);
