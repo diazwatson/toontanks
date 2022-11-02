@@ -47,7 +47,7 @@ void UHealthComponent::DamageTaken(AActor* DamagedActor, float Damage, const UDa
 
 	if (Health <= 0.f && ToonTankGameMode)
 	{
-		ToonTankGameMode->ActorDie(DamagedActor);
+		ToonTankGameMode->ActorDied(DamagedActor);
 	}
 
 

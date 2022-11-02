@@ -31,9 +31,7 @@ void ATower::HandleDestruction()
 void ATower::BeginPlay()
 {
 	Super::BeginPlay();
-
 	Tank = Cast<ATank>(UGameplayStatics::GetPlayerPawn(this, 0));
-
 	GetWorldTimerManager().SetTimer(FireRateTimerHandle, this, &ATower::CheckFireCondition, FireRate, true);
 }
 
@@ -41,8 +39,7 @@ void ATower::CheckFireCondition()
 {
 	if (InFireRange())
 	{
-		// If in Range, Fire
-		Fire();
+		Fire(); // If in Range, fire
 	}
 }
 
