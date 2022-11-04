@@ -7,6 +7,8 @@
 // #include "GameFramework/ProjectileMovementComponent.h" // Forward Declaration
 #include "Projectile.generated.h"
 
+class USoundBase;
+
 UCLASS()
 class TOONTANKS_API AProjectile : public AActor
 {
@@ -39,10 +41,19 @@ private:
 	float Damage = 50.f;
 
 	UPROPERTY(EditAnywhere, Category="Combat")
-	class UParticleSystem* HitParticle;
+	class UParticleSystem* HitParticles;
 
 	UPROPERTY(VisibleAnywhere, Category="Combat")
 	class UParticleSystemComponent* TrailParticles;
+
+	UPROPERTY(EditAnywhere, Category="Combat")
+	USoundBase* LaunchSound;
+	
+	UPROPERTY(EditAnywhere, Category="Combat")
+	USoundBase* HitSound;
+
+	UPROPERTY(EditAnywhere, Category="Combat")
+	TSubclassOf<class UCameraShakeBase> HitCameraShakeClass;
 	
 public:
 	// Called every frame
